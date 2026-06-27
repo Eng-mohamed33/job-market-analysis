@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Space+Grotesk:wght@500;700&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #0d1117;
+  --surface: #161b22;
+  --surface2: #1c2333;
+  --border: #30363d;
+  --accent: #58a6ff;
+  --accent2: #3fb950;
+  --accent3: #f78166;
+  --accent4: #d2a8ff;
+  --accent5: #ffa657;
+  --text: #e6edf3;
+  --muted: #8b949e;
+  --card-radius: 12px;
+}
+
+body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; min-height: 100vh; padding: 24px; }
+
+header { margin-bottom: 20px; }
+
+.header-top { display: flex; align-items: flex-start; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+
+.badge { background: linear-gradient(135deg, var(--accent), var(--accent4)); color: #fff; font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; padding: 4px 10px; border-radius: 20px; margin-bottom: 8px; display: inline-block; }
+
+h1 { font-family: 'Space Grotesk', sans-serif; font-size: clamp(22px, 4vw, 34px); font-weight: 700; color: var(--text); line-height: 1.2; }
+
+h1 span { color: var(--accent); }
+
+.subtitle { color: var(--muted); font-size: 14px; margin-top: 6px; }
+
+.source-tag { background: var(--surface2); border: 1px solid var(--border); border-radius: 8px; padding: 8px 14px; font-size: 12px; color: var(--muted); line-height: 1.8; }
+
+/* Filters */
+.filters-bar { background: var(--surface); border: 1px solid var(--border); border-radius: var(--card-radius); padding: 16px 20px; margin-bottom: 20px; display: flex; flex-wrap: wrap; gap: 20px; }
+
+.filter-group label { display: block; font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+
+.filter-btns { display: flex; flex-wrap: wrap; gap: 6px; }
+
+.filter-btn { background: var(--surface2); border: 1px solid var(--border); color: var(--muted); font-size: 12px; padding: 5px 12px; border-radius: 20px; cursor: pointer; transition: all 0.2s; font-family: 'Inter', sans-serif; }
+
+.filter-btn:hover { border-color: var(--accent); color: var(--accent); }
+
+.filter-btn.active { background: var(--accent); border-color: var(--accent); color: #fff; font-weight: 600; }
+
+/* KPIs */
+.kpi-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 14px; margin-bottom: 20px; }
+
+.kpi { background: var(--surface); border: 1px solid var(--border); border-radius: var(--card-radius); padding: 18px 20px; position: relative; overflow: hidden; transition: transform 0.2s; }
+
+.kpi:hover { transform: translateY(-2px); }
+
+.kpi::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; }
+
+.kpi.k1::before { background: var(--accent); }
+.kpi.k2::before { background: var(--accent2); }
+.kpi.k3::before { background: var(--accent3); }
+.kpi.k4::before { background: var(--accent4); }
+.kpi.k5::before { background: var(--accent5); }
+
+.kpi-label { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+
+.kpi-value { font-family: 'Space Grotesk', sans-serif; font-size: 26px; font-weight: 700; color: var(--text); line-height: 1; transition: all 0.3s; }
+
+.kpi-sub { font-size: 12px; color: var(--muted); margin-top: 4px; }
+
+/* Grid */
+.grid { display: grid; gap: 18px; margin-bottom: 18px; }
+
+.grid-2 { grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); }
+
+.grid-3 { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+
+/* Card */
+.card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--card-radius); padding: 20px; margin-bottom: 18px; }
+
+.card-title { font-family: 'Space Grotesk', sans-serif; font-size: 14px; font-weight: 600; color: var(--text); margin-bottom: 4px; }
+
+.card-sub { font-size: 12px; color: var(--muted); margin-bottom: 16px; }
+
+.chart-wrap { position: relative; width: 100%; }
+
+/* Footer */
+footer { text-align: center; color: var(--muted); font-size: 12px; margin-top: 10px; padding-top: 20px; border-top: 1px solid var(--border); }

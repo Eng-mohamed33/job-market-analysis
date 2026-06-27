@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Job Market Analysis Dashboard</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <div class="header-top">
+      <div>
+        <div class="badge">Data Analysis Project</div>
+        <h1>Job Market <span>Analysis</span> Dashboard</h1>
+        <p class="subtitle">LinkedIn Job Postings 2023–2024 · 123,849 postings analyzed</p>
+      </div>
+      <div class="source-tag">📊 LinkedIn · Kaggle<br>🐍 Python · SQL · Chart.js</div>
+    </div>
+  </header>
+
+  <!-- Filters -->
+  <div class="filters-bar">
+    <div class="filter-group">
+      <label>Work Type</label>
+      <div class="filter-btns" id="workTypeFilter">
+        <button class="filter-btn active" data-value="all">All</button>
+        <button class="filter-btn" data-value="Full-time">Full-time</button>
+        <button class="filter-btn" data-value="Contract">Contract</button>
+        <button class="filter-btn" data-value="Part-time">Part-time</button>
+        <button class="filter-btn" data-value="Internship">Internship</button>
+      </div>
+    </div>
+    <div class="filter-group">
+      <label>Experience Level</label>
+      <div class="filter-btns" id="expFilter">
+        <button class="filter-btn active" data-value="all">All</button>
+        <button class="filter-btn" data-value="Entry level">Entry Level</button>
+        <button class="filter-btn" data-value="Mid-Senior level">Mid-Senior</button>
+        <button class="filter-btn" data-value="Director">Director</button>
+        <button class="filter-btn" data-value="Executive">Executive</button>
+      </div>
+    </div>
+    <div class="filter-group">
+      <label>Role</label>
+      <div class="filter-btns" id="roleFilter">
+        <button class="filter-btn active" data-value="all">All</button>
+        <button class="filter-btn" data-value="Data Analyst">Data Analyst</button>
+        <button class="filter-btn" data-value="Data Scientist">Data Scientist</button>
+        <button class="filter-btn" data-value="Web Developer">Web Developer</button>
+        <button class="filter-btn" data-value="Software Engineer">Software Engineer</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- KPIs -->
+  <div class="kpi-row">
+    <div class="kpi k1"><div class="kpi-label">Total Jobs</div><div class="kpi-value" id="kpiJobs">123K</div><div class="kpi-sub">postings</div></div>
+    <div class="kpi k2"><div class="kpi-label">Avg Salary</div><div class="kpi-value" id="kpiSalary">$119K</div><div class="kpi-sub">annual USD</div></div>
+    <div class="kpi k3"><div class="kpi-label">Remote Jobs</div><div class="kpi-value" id="kpiRemote">12.3%</div><div class="kpi-sub">of total</div></div>
+    <div class="kpi k4"><div class="kpi-label">Top Skill</div><div class="kpi-value" id="kpiSkill">IT</div><div class="kpi-sub">most required</div></div>
+    <div class="kpi k5"><div class="kpi-label">Top Role</div><div class="kpi-value" id="kpiRole">Sales Mgr</div><div class="kpi-sub">673 postings</div></div>
+  </div>
+
+  <!-- Row 1 -->
+  <div class="grid grid-2">
+    <div class="card">
+      <div class="card-title">Top 10 Most Required Skills</div>
+      <div class="card-sub">By number of job postings</div>
+      <div class="chart-wrap" style="height:280px"><canvas id="skillsChart"></canvas></div>
+    </div>
+    <div class="card">
+      <div class="card-title">Role Salary Comparison</div>
+      <div class="card-sub">Average annual salary (USD)</div>
+      <div class="chart-wrap" style="height:280px"><canvas id="salaryChart"></canvas></div>
+    </div>
+  </div>
+
+  <!-- Row 2 -->
+  <div class="grid grid-3">
+    <div class="card">
+      <div class="card-title">Jobs by Work Type</div>
+      <div class="card-sub">Contract type distribution</div>
+      <div class="chart-wrap" style="height:220px"><canvas id="workTypeChart"></canvas></div>
+    </div>
+    <div class="card">
+      <div class="card-title">Experience Level</div>
+      <div class="card-sub">Which seniority is most wanted?</div>
+      <div class="chart-wrap" style="height:220px"><canvas id="expChart"></canvas></div>
+    </div>
+    <div class="card">
+      <div class="card-title">Remote vs On-site</div>
+      <div class="card-sub">Work location preference</div>
+      <div class="chart-wrap" style="height:220px"><canvas id="remoteChart"></canvas></div>
+    </div>
+  </div>
+
+  <!-- Row 3 -->
+  <div class="card">
+    <div class="card-title">Top 10 Most In-Demand Job Titles</div>
+    <div class="card-sub">By number of postings</div>
+    <div class="chart-wrap" style="height:260px"><canvas id="topJobsChart"></canvas></div>
+  </div>
+
+  <footer>
+    Built by Mohamed Suleiman · LinkedIn Job Postings Dataset (Kaggle) · Python · Pandas · SQL · Chart.js
+  </footer>
+
+  <script src="charts.js"></script>
+</body>
+</html>
